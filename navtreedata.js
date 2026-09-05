@@ -27,7 +27,7 @@ var NAVTREE =
   [ "deki-i2c", "index.html", [
     [ "Components", "index.html#autotoc_md0", null ],
     [ "Component reference", "index.html#autotoc_md1", [
-      [ "I2CBusComponent (I2C Bus Component)", "index.html#c-i2cbuscomponent", null ]
+      [ "I2CBusComponent", "index.html#c-i2cbuscomponent", null ]
     ] ]
   ] ]
 ];
