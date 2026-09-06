@@ -1,0 +1,9 @@
+{
+  "id": "deki-i2c",
+  "displayName": "I2C",
+  "minEngine": "0.10.0",
+  "buildDefine": "DEKI_PACKAGE_I2C",
+  "requires": [],
+  "features": [],
+  "dependencies": {}
+}
