@@ -13,11 +13,11 @@
  * One instance per physical bus. Multiple chips on the same bus share this
  * single component.
  */
+DEKI_CATEGORY("System")
+DEKI_DESCRIPTION("Starts one I2C bus at boot. Every chip on that bus shares it.")
 class I2CBusComponent : public Deki::SetupComponent
 {
 public:
-    DEKI_COMPONENT(I2CBusComponent, Deki::SetupComponent, "System", "5b1d8f4e-3a02-4c7d-9f56-1e8a2b9c3d40", "")
-    DEKI_DESCRIPTION("Starts one I2C bus at boot. Every chip on that bus shares it.")
 
     DEKI_EXPORT
     DEKI_RANGE(0, 3)
@@ -45,4 +45,3 @@ private:
     IDekiI2C* m_Bus = nullptr;
 };
 
-#include "generated/I2CBusComponent.gen.h"
