@@ -36,6 +36,7 @@ public:
     int32_t sclPin = 22;
 
     DEKI_EXPORT
+    DEKI_UNIT(Frequency)
     DEKI_RANGE(10000, 1000000)
     int32_t i2cHz = 400000;
 
