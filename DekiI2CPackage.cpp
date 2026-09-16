@@ -38,7 +38,7 @@ DEKI_I2C_API int DekiI2C_EnsureRegistered(void)
 #endif
 }
 
-DEKI_PLUGIN_API const char* DekiPlugin_GetName(void)    { return "DekiRendering::Deki I2C Package"; }
+DEKI_PLUGIN_API const char* DekiPlugin_GetName(void)    { return "Deki I2C Package"; }
 DEKI_PLUGIN_API const char* DekiPlugin_GetVersion(void)
 {
 #ifdef DEKI_PACKAGE_VERSION
