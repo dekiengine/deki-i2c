@@ -4,6 +4,9 @@
 #include <cstdint>
 #include <cstddef>
 
+namespace DekiI2c
+{
+
 class IDekiI2C : public Deki::IPackage
 {
 public:
@@ -18,3 +21,5 @@ public:
     virtual bool Read (uint8_t addr, uint8_t reg, uint8_t* dst, size_t len) = 0;
     virtual bool Write(uint8_t addr, uint8_t reg, const uint8_t* src, size_t len) = 0;
 };
+
+}  // namespace DekiI2c

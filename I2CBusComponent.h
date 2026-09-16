@@ -5,6 +5,9 @@
 #include <deki/reflection/Property.h>
 #include "IDekiI2C.h"
 
+namespace DekiI2c
+{
+
 /**
  * @brief Boot-prefab component that initializes one physical I2C bus and
  *        publishes it in DekiI2C so chip drivers (DS3231RTC, etc.)
@@ -15,6 +18,7 @@
  */
 DEKI_CATEGORY("System")
 DEKI_DESCRIPTION("Starts one I2C bus at boot. Every chip on that bus shares it.")
+DEKI_FORMER_NAME("I2CBusComponent")
 class I2CBusComponent : public Deki::SetupComponent
 {
 public:
@@ -44,4 +48,6 @@ public:
 private:
     IDekiI2C* m_Bus = nullptr;
 };
+
+}  // namespace DekiI2c
 

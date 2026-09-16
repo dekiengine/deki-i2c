@@ -4,6 +4,9 @@
 #include <deki/LogSystem.h>
 #include <string>
 
+namespace DekiI2c
+{
+
 void I2CBusComponent::Setup(SetupCallback onComplete)
 {
     if (!m_Bus)
@@ -39,3 +42,5 @@ void I2CBusComponent::Setup(SetupCallback onComplete)
 
     if (onComplete) onComplete(success);
 }
+
+}  // namespace DekiI2c

@@ -1,6 +1,9 @@
 #include "DekiI2C.h"
 #include <deki/LogSystem.h>
 
+namespace DekiI2c
+{
+
 DekiI2C::Factory DekiI2C::s_Factory = nullptr;
 IDekiI2C*        DekiI2C::s_Buses[DekiI2C::kMaxBuses] = {};
 
@@ -40,3 +43,5 @@ IDekiI2C* DekiI2C::GetBus(int port)
     if (port < 0 || port >= kMaxBuses) return nullptr;
     return s_Buses[port];
 }
+
+}  // namespace DekiI2c

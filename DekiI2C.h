@@ -3,6 +3,9 @@
 #include "IDekiI2C.h"
 #include "DekiI2CPackage.h"
 
+namespace DekiI2c
+{
+
 /**
  * @brief Provider/registry for I2C buses.
  *
@@ -30,3 +33,5 @@ private:
     static Factory   s_Factory;
     static IDekiI2C* s_Buses[kMaxBuses];
 };
+
+}  // namespace DekiI2c
