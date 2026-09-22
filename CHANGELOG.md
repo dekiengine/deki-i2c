@@ -8,6 +8,15 @@ breaking change bumps the minor across the editor, the engine and every
 package together, so a package with no changes of its own is still released
 alongside one that has them.
 
+## Unreleased
+
+### Added
+- **`IDekiI2C::ReadRaw(addr, dst, len)`**: a read with no register sent first,
+  for devices that are not register maps. An I2C keyboard answers any read with
+  the next character and treats a written byte as a command, so `Read()` would
+  change its settings. Not pure virtual: a backend written before it still
+  compiles, and answers false.
+
 ## 0.16.0
 
 ### Changed
