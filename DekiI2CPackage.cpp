@@ -47,7 +47,7 @@ DEKI_PLUGIN_API const char* DekiPlugin_GetVersion(void)
     return "0.0.0-dev";
 #endif
 }
-DEKI_PLUGIN_API int  DekiPlugin_Init(void)     { DEKI_LOG_INFO("[deki-i2c] DekiPlugin_Init"); return 0; }
+DEKI_PLUGIN_API int  DekiPlugin_Init(void)     { return 0; }
 DEKI_PLUGIN_API void DekiPlugin_Shutdown(void) { s_I2CRegistered = false; }
 
 #ifdef DEKI_EDITOR
@@ -64,8 +64,7 @@ DEKI_PLUGIN_API const Deki::ComponentMeta* DekiPlugin_GetComponentMeta(int) { re
 DEKI_PLUGIN_API void DekiPlugin_RegisterComponents(void)
 {
 #ifdef DEKI_EDITOR
-    int n = DekiI2C_EnsureRegistered();
-    DEKI_LOG_INFO("[deki-i2c] ::DekiPlugin_RegisterComponents -> %d component(s)", n);
+    DekiI2C_EnsureRegistered();
 #endif
 }
 
