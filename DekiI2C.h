@@ -20,17 +20,17 @@ class DEKI_I2C_API DekiI2C
 public:
     using Factory = IDekiI2C* (*)();
 
-    static void      SetFactory(Factory factory);
+    static void SetFactory(Factory factory);
     static IDekiI2C* Create();
-    static bool      HasFactory();
+    static bool HasFactory();
 
-    static void      RegisterBus(int port, IDekiI2C* bus);
+    static void RegisterBus(int port, IDekiI2C* bus);
     static IDekiI2C* GetBus(int port);
 
     static constexpr int kMaxBuses = 4;
 
 private:
-    static Factory   s_Factory;
+    static Factory s_Factory;
     static IDekiI2C* s_Buses[kMaxBuses];
 };
 

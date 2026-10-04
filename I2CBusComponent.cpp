@@ -15,17 +15,20 @@ void I2CBusComponent::Setup(SetupCallback onComplete)
         if (!m_Bus)
         {
             DEKI_LOG_ERROR("I2CBusComponent: No I2C backend registered");
-            if (onComplete) onComplete(false);
+            if (onComplete)
+            {
+                onComplete(false);
+            }
             return;
         }
     }
 
     Deki::PackageConfig config;
     config.packageId = "i2c";
-    config.enabled  = true;
+    config.enabled = true;
     config.pins["SDA"] = sdaPin;
     config.pins["SCL"] = sclPin;
-    config.settings["i2cHz"]   = std::to_string(i2cHz);
+    config.settings["i2cHz"] = std::to_string(i2cHz);
     config.settings["i2cPort"] = std::to_string(i2cPort);
 
     m_Bus->Configure(config);
@@ -40,7 +43,10 @@ void I2CBusComponent::Setup(SetupCallback onComplete)
         DEKI_LOG_ERROR("I2CBusComponent: Failed to initialize I2C bus on port %d", (int)i2cPort);
     }
 
-    if (onComplete) onComplete(success);
+    if (onComplete)
+    {
+        onComplete(success);
+    }
 }
 
 }  // namespace DekiI2c

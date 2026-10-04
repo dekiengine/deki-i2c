@@ -7,7 +7,7 @@
 #include <deki/LogSystem.h>
 
 extern void DekiI2C_RegisterComponents();
-extern int  DekiI2C_GetAutoComponentCount();
+extern int DekiI2C_GetAutoComponentCount();
 extern const Deki::ComponentMeta* DekiI2C_GetAutoComponentMeta(int index);
 
 namespace DekiI2c
@@ -18,56 +18,74 @@ namespace DekiI2c
 
 static bool s_I2CRegistered = false;
 
-
 }  // namespace DekiI2c
 // The exports below are C symbols at global scope; the package's own
 // registration helpers and statics live in its namespace.
 using namespace DekiI2c;
 
-extern "C" {
-
-DEKI_I2C_API int DekiI2C_EnsureRegistered(void)
+extern "C"
 {
+    DEKI_I2C_API int DekiI2C_EnsureRegistered(void)
+    {
 #ifdef DEKI_EDITOR
-    if (s_I2CRegistered) return ::DekiI2C_GetAutoComponentCount();
-    s_I2CRegistered = true;
-    ::DekiI2C_RegisterComponents();
-    return ::DekiI2C_GetAutoComponentCount();
+        if (s_I2CRegistered)
+        {
+            return ::DekiI2C_GetAutoComponentCount();
+        }
+        s_I2CRegistered = true;
+        ::DekiI2C_RegisterComponents();
+        return ::DekiI2C_GetAutoComponentCount();
 #else
-    return 0;
+        return 0;
 #endif
-}
+    }
 
-DEKI_PLUGIN_API const char* DekiPlugin_GetName(void)    { return "Deki I2C Package"; }
-DEKI_PLUGIN_API const char* DekiPlugin_GetVersion(void)
-{
+    DEKI_PLUGIN_API const char* DekiPlugin_GetName(void)
+    {
+        return "Deki I2C Package";
+    }
+    DEKI_PLUGIN_API const char* DekiPlugin_GetVersion(void)
+    {
 #ifdef DEKI_PACKAGE_VERSION
-    return DEKI_PACKAGE_VERSION;
+        return DEKI_PACKAGE_VERSION;
 #else
-    return "0.0.0-dev";
+        return "0.0.0-dev";
 #endif
-}
-DEKI_PLUGIN_API int  DekiPlugin_Init(void)     { return 0; }
-DEKI_PLUGIN_API void DekiPlugin_Shutdown(void) { s_I2CRegistered = false; }
+    }
+    DEKI_PLUGIN_API int DekiPlugin_Init(void)
+    {
+        return 0;
+    }
+    DEKI_PLUGIN_API void DekiPlugin_Shutdown(void)
+    {
+        s_I2CRegistered = false;
+    }
 
 #ifdef DEKI_EDITOR
-DEKI_PLUGIN_API int  DekiPlugin_GetComponentCount(void) { return ::DekiI2C_GetAutoComponentCount(); }
-DEKI_PLUGIN_API const Deki::ComponentMeta* DekiPlugin_GetComponentMeta(int index)
-{
-    return ::DekiI2C_GetAutoComponentMeta(index);
-}
+    DEKI_PLUGIN_API int DekiPlugin_GetComponentCount(void)
+    {
+        return ::DekiI2C_GetAutoComponentCount();
+    }
+    DEKI_PLUGIN_API const Deki::ComponentMeta* DekiPlugin_GetComponentMeta(int index)
+    {
+        return ::DekiI2C_GetAutoComponentMeta(index);
+    }
 #else
-DEKI_PLUGIN_API int  DekiPlugin_GetComponentCount(void) { return 0; }
-DEKI_PLUGIN_API const Deki::ComponentMeta* DekiPlugin_GetComponentMeta(int) { return nullptr; }
+    DEKI_PLUGIN_API int DekiPlugin_GetComponentCount(void)
+    {
+        return 0;
+    }
+    DEKI_PLUGIN_API const Deki::ComponentMeta* DekiPlugin_GetComponentMeta(int)
+    {
+        return nullptr;
+    }
 #endif
 
-DEKI_PLUGIN_API void DekiPlugin_RegisterComponents(void)
-{
+    DEKI_PLUGIN_API void DekiPlugin_RegisterComponents(void)
+    {
 #ifdef DEKI_EDITOR
-    DekiI2C_EnsureRegistered();
+        DekiI2C_EnsureRegistered();
 #endif
-}
-
+    }
 
 }  // extern "C"
-

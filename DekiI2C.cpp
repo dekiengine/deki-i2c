@@ -5,7 +5,7 @@ namespace DekiI2c
 {
 
 DekiI2C::Factory DekiI2C::s_Factory = nullptr;
-IDekiI2C*        DekiI2C::s_Buses[DekiI2C::kMaxBuses] = {};
+IDekiI2C* DekiI2C::s_Buses[DekiI2C::kMaxBuses] = {};
 
 void DekiI2C::SetFactory(Factory factory)
 {
@@ -40,7 +40,10 @@ void DekiI2C::RegisterBus(int port, IDekiI2C* bus)
 
 IDekiI2C* DekiI2C::GetBus(int port)
 {
-    if (port < 0 || port >= kMaxBuses) return nullptr;
+    if (port < 0 || port >= kMaxBuses)
+    {
+        return nullptr;
+    }
     return s_Buses[port];
 }
 
