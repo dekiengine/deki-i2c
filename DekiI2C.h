@@ -6,15 +6,13 @@
 namespace DekiI2c
 {
 
-/**
- * @brief Provider/registry for I2C buses.
- *
- * - Platform package registers a factory via SetFactory().
- * - I2CBusComponent (one per physical bus in boot.prefab) calls Create() then
- *   Configure()/Initialize(), and finally RegisterBus(port, bus) so chip
- *   drivers can look it up by port number.
- * - Chip drivers (DS3231RTC, etc.) call GetBus(port) once during Initialize().
- */
+/// Creates I2C buses and finds them by port.
+///
+/// - The platform package registers a factory with SetFactory().
+/// - I2CBusComponent (one per physical bus in the boot scene) calls Create(),
+///   then Configure() and Initialize(), then RegisterBus(port, bus).
+/// - Chip drivers (DS3231RTC and others) call GetBus(port) once in
+///   Initialize().
 class DEKI_I2C_API DekiI2C
 {
 public:

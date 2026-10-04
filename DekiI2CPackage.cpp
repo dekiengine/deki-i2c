@@ -1,7 +1,4 @@
-/**
- * @file DekiI2CPackage.cpp
- * @brief Package entry point for deki-i2c
- */
+// Package entry point for deki-i2c.
 #include "DekiI2CPackage.h"
 #include <deki/interop/Plugin.h>
 #include <deki/LogSystem.h>

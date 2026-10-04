@@ -8,14 +8,10 @@
 namespace DekiI2c
 {
 
-/**
- * @brief Boot-prefab component that initializes one physical I2C bus and
- *        publishes it in DekiI2C so chip drivers (DS3231RTC, etc.)
- *        can look it up by port number.
- *
- * One instance per physical bus. Multiple chips on the same bus share this
- * single component.
- */
+/// Boot-scene component that starts one physical I2C bus and registers it in
+/// DekiI2C, where chip drivers (DS3231RTC and others) find it by port.
+///
+/// Use one per physical bus; every chip on that bus shares it.
 DEKI_CATEGORY("System")
 DEKI_DESCRIPTION("Starts one I2C bus at boot. Every chip on that bus shares it.")
 DEKI_FORMER_NAME("I2CBusComponent")
