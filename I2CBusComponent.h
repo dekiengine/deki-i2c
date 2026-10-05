@@ -14,7 +14,6 @@ namespace DekiI2c
 /// Use one per physical bus; every chip on that bus shares it.
 DEKI_CATEGORY("System")
 DEKI_DESCRIPTION("Starts one I2C bus at boot. Every chip on that bus shares it.")
-DEKI_FORMER_NAME("I2CBusComponent")
 class I2CBusComponent : public Deki::SetupComponent
 {
 public:
