@@ -9,6 +9,18 @@ namespace DekiI2c
 
 void I2CBusComponent::Setup(SetupCallback onComplete)
 {
+    // A port the registry cannot hold would set the bus up and register
+    // nothing, and every chip on it would then fail with "no I2C bus".
+    if (i2cPort < 0 || i2cPort >= DekiI2C::kMaxBuses)
+    {
+        DEKI_LOG_ERROR("I2CBusComponent: I2C port %d is out of range (0-%d)", (int)i2cPort, DekiI2C::kMaxBuses - 1);
+        if (onComplete)
+        {
+            onComplete(false);
+        }
+        return;
+    }
+
     if (!m_Bus)
     {
         m_Bus = DekiI2C::Create();
