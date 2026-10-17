@@ -7,5 +7,7 @@
     "I2C Bus Component": "I2C 버스 컴포넌트",
     "Scl Pin": "SCL 핀",
     "Sda Pin": "SDA 핀",
-    "Which of the chip's I2C controllers to use. Most boards only wire one, so 0 unless your schematic says otherwise.": "칩의 I2C 컨트롤러 중 어느 것을 쓸지 정합니다. 대부분의 보드는 하나만 연결되어 있으므로, 회로도에 다르게 나와 있지 않다면 0입니다."
+    "Which of the chip's I2C controllers to use. Most boards only wire one, so 0 unless your schematic says otherwise.": "칩의 I2C 컨트롤러 중 어느 것을 쓸지 정합니다. 대부분의 보드는 하나만 연결되어 있으므로, 회로도에 다르게 나와 있지 않다면 0입니다.",
+    "Starts one I2C bus at boot. Every chip on that bus shares it.": "부팅 시 I2C 버스 하나를 시작합니다. 그 버스의 모든 칩이 이 버스를 공유합니다.",
+    "System": "시스템"
 }

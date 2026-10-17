@@ -7,5 +7,7 @@
     "I2C Bus Component": "I2C バスコンポーネント",
     "Scl Pin": "SCL ピン",
     "Sda Pin": "SDA ピン",
-    "Which of the chip's I2C controllers to use. Most boards only wire one, so 0 unless your schematic says otherwise.": "チップのどの I2C コントローラーを使うかです。ほとんどのボードは 1 つしか配線していないので、回路図で別の指定がなければ 0 です。"
+    "Which of the chip's I2C controllers to use. Most boards only wire one, so 0 unless your schematic says otherwise.": "チップのどの I2C コントローラーを使うかです。ほとんどのボードは 1 つしか配線していないので、回路図で別の指定がなければ 0 です。",
+    "Starts one I2C bus at boot. Every chip on that bus shares it.": "起動時に I2C バスを 1 つ開始します。そのバス上のチップはすべてこれを共有します。",
+    "System": "システム"
 }
