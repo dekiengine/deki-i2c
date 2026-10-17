@@ -1,0 +1,11 @@
+{
+    "Bus speed. 100 kHz is the safe standard mode, 400 kHz the usual fast mode. Long wires or many devices need the lower figure; too high shows up as reads that intermittently fail.": "バスの速度です。100 kHz は安全な標準モード、400 kHz は一般的な高速モードです。配線が長いときやデバイスが多いときは低い値が必要です。高すぎると、読み込みがときどき失敗します。",
+    "GPIO carrying the I2C clock line (SCL). Shared by every device on this bus, like SDA.": "I2C のクロック線 (SCL) の GPIO です。SDA と同じく、このバスのすべてのデバイスで共有します。",
+    "GPIO carrying the I2C data line (SDA). Must match how the sensors are wired; every device on this bus shares it.": "I2C のデータ線 (SDA) の GPIO です。センサーの配線と一致させる必要があります。このバスのすべてのデバイスで共有します。",
+    "I 2c Hz": "I2C Hz",
+    "I 2c Port": "I2C ポート",
+    "I2C Bus Component": "I2C バスコンポーネント",
+    "Scl Pin": "SCL ピン",
+    "Sda Pin": "SDA ピン",
+    "Which of the chip's I2C controllers to use. Most boards only wire one, so 0 unless your schematic says otherwise.": "チップのどの I2C コントローラーを使うかです。ほとんどのボードは 1 つしか配線していないので、回路図で別の指定がなければ 0 です。"
+}
