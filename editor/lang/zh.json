@@ -1,0 +1,13 @@
+{
+    "Bus speed. 100 kHz is the safe standard mode, 400 kHz the usual fast mode. Long wires or many devices need the lower figure; too high shows up as reads that intermittently fail.": "总线速度。100 kHz 是稳妥的标准模式，400 kHz 是常用的快速模式。接线较长或设备较多时需要较低的值；过高会导致读取时不时失败。",
+    "GPIO carrying the I2C clock line (SCL). Shared by every device on this bus, like SDA.": "I2C 时钟线 (SCL) 所用的 GPIO。与 SDA 一样，由此总线上的所有设备共用。",
+    "GPIO carrying the I2C data line (SDA). Must match how the sensors are wired; every device on this bus shares it.": "I2C 数据线 (SDA) 所用的 GPIO。必须与传感器的接线一致；此总线上的所有设备共用它。",
+    "I 2c Hz": "I2C Hz",
+    "I 2c Port": "I2C 端口",
+    "I2C Bus Component": "I2C 总线组件",
+    "Scl Pin": "SCL 引脚",
+    "Sda Pin": "SDA 引脚",
+    "Which of the chip's I2C controllers to use. Most boards only wire one, so 0 unless your schematic says otherwise.": "使用芯片的哪个 I2C 控制器。大多数开发板只接了一个，所以除非原理图另有说明，否则用 0。",
+    "Starts one I2C bus at boot. Every chip on that bus shares it.": "启动时开启一条 I2C 总线。该总线上的所有芯片共用它。",
+    "System": "系统"
+}
