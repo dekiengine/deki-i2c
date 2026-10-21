@@ -8,6 +8,16 @@ breaking change bumps the minor across the editor, the engine and every
 package together, so a package with no changes of its own is still released
 alongside one that has them.
 
+## Unreleased
+
+### Added
+- **`IDekiI2C::WriteRead(addr, tx, txLen, rx, rxLen)`** and
+  **`WriteRaw(addr, tx, len)`**: a write then a read with a repeated start,
+  and a write with no register byte in front, for devices whose registers are
+  not one byte wide (a GT911 touch controller's are 16-bit). Not pure virtual,
+  like `ReadRaw`: a backend written before them still compiles, and answers
+  false.
+
 ## 0.18.0
 
 ### Changed

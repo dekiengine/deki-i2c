@@ -33,6 +33,30 @@ public:
         (void)len;
         return false;
     }
+
+    /// Writes `tx`, then reads `rxLen` bytes, as one transaction with a
+    /// repeated start: for a device whose registers are not one byte wide (a
+    /// GT911 touch controller's are 16-bit, high byte first). Not pure
+    /// virtual, like ReadRaw.
+    virtual bool WriteRead(uint8_t addr, const uint8_t* tx, size_t txLen, uint8_t* rx, size_t rxLen)
+    {
+        (void)addr;
+        (void)tx;
+        (void)txLen;
+        (void)rx;
+        (void)rxLen;
+        return false;
+    }
+
+    /// Writes `tx` as it is, with no register byte in front: the register is
+    /// in `tx` when it is not one byte wide. Not pure virtual, like ReadRaw.
+    virtual bool WriteRaw(uint8_t addr, const uint8_t* tx, size_t len)
+    {
+        (void)addr;
+        (void)tx;
+        (void)len;
+        return false;
+    }
 };
 
 }  // namespace DekiI2c
